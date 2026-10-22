@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Tajawal', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+
+  --color-brand-50: #fffbeb;
+  --color-brand-100: #fef3c7;
+  --color-brand-200: #fde68a;
+  --color-brand-300: #fcd34d;
+  --color-brand-400: #fbbf24;
+  --color-brand-500: #f59e0b;
+  --color-brand-600: #d97706;
+  --color-brand-700: #b45309;
+  --color-brand-800: #92400e;
+  --color-brand-900: #78350f;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-stone-50 text-stone-800 antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply text-stone-900;
+  }
+
+  ::selection {
+    @apply bg-brand-300 text-stone-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-bold transition
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
+      disabled:cursor-not-allowed disabled:opacity-60
+      bg-stone-950 text-white hover:bg-stone-800;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-bold transition
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
+      disabled:cursor-not-allowed disabled:opacity-60
+      bg-brand-500 text-stone-950 hover:bg-brand-400;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-bold transition
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
+      disabled:cursor-not-allowed disabled:opacity-60
+      border border-stone-300 bg-white text-stone-700 hover:border-stone-400 hover:bg-stone-100;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-bold transition
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
+      disabled:cursor-not-allowed disabled:opacity-60
+      border border-red-200 bg-red-50 text-red-700 hover:bg-red-100;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm text-stone-900
+      placeholder:text-stone-400 focus:border-stone-900 focus:outline-none focus:ring-0;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-bold text-stone-700;
+  }
+
+  .card {
+    @apply rounded-2xl border border-stone-200 bg-white shadow-sm;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold;
+  }
+}

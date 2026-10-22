@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lulu-store",
+  "main": "server/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  // بدون database_id: Cloudflare بتنشئ قاعدة D1 تلقائيًا أول نشر (Automatic provisioning)
+  "d1_databases": [
+    {
+      "binding": "DB"
+    }
+  ]
+}
